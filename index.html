@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Laundry Services</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="logo">LaundryPro</div>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact Us</a>
+      </div>
+      <div class="user-name">Ligemane</div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <h1 class="hero-title">Revitalize Your Clothes with Expert Laundry Services!</h1>
+        <p class="hero-description">From premium dry cleaning to swift wash and fold, we deliver care and convenience. Schedule a pickup and rediscover the freshness of your clothes today!</p>
+        <a href="#services" class="btn">Book a service today!</a>
+      </div>
+      <div class="hero-image">
+        <img height="400" width="500" src="https://img.freepik.com/premium-photo/cute-3d-cartoon-washing-machine-character_960080-5995.jpg " alt="Washing Machine">
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements Section -->
+  <section class="achievements">
+    <div class="container achievements-container">
+      <div class="achievement-item">
+        <div class="achievement-number">15+</div>
+        <div class="achievement-text">Laundry Services</div>
+      </div>
+      <div class="achievement-item">
+        <div class="achievement-number">240+</div>
+        <div class="achievement-text">Happy Customers</div>
+      </div>
+      <div class="achievement-item">
+        <div class="achievement-number">2+ Yrs</div>
+        <div class="achievement-text">Experience</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
+      <p style="text-align: center; margin-bottom: 30px;">Click On The Add To Cart Button To Add The Services To Your Cart</p>
+
+      <div class="services-container">
+        <div class="services-list">
+          <h3>Add Item</h3>
+          <div class="service-item">
+            <div class="service-info">
+              <div class="service-name">Dry Cleaning</div>
+              <div class="service-price">₹200.00</div>
+            </div>
+            <div class="service-actions">
+              <button class="add-btn" onclick="addToCart('Dry Cleaning', 200)">Add Item</button>
+            </div>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <div class="service-name">Wash & Fold</div>
+              <div class="service-price">₹100.00</div>
+            </div>
+            <div class="service-actions">
+              <button class="add-btn" onclick="addToCart('Wash & Fold', 100)">Add Item</button>
+            </div>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <div class="service-name">Ironing</div>
+              <div class="service-price">₹30.00</div>
+            </div>
+            <div class="service-actions">
+              <button class="add-btn" onclick="addToCart('Ironing', 30)">Add Item</button>
+            </div>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <div class="service-name">Stain Removal</div>
+              <div class="service-price">₹500.00</div>
+            </div>
+            <div class="service-actions">
+              <button class="add-btn" onclick="addToCart('Stain Removal', 500)">Add Item</button>
+            </div>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <div class="service-name">Leather & Suede Cleaning</div>
+              <div class="service-price">₹999.00</div>
+            </div>
+            <div class="service-actions">
+              <button class="add-btn" onclick="addToCart('Leather & Suede Cleaning', 999)">Add Item</button>
+            </div>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <div class="service-name">Wedding Dress Cleaning</div>
+              <div class="service-price">₹2800.00</div>
+            </div>
+            <div class="service-actions">
+              <button class="add-btn" onclick="addToCart('Wedding Dress Cleaning', 2800)">Add Item</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="cart-section">
+          <div class="cart-container">
+            <h3 class="cart-title">Added Items</h3>
+            <div class="cart-items">
+              <table class="cart-table">
+                <thead>
+                  <tr>
+                    <th>S.No</th>
+                    <th>Service Name</th>
+                    <th>Price</th>
+                  </tr>
+                </thead>
+                <tbody id="cart-items">
+                  <!-- Items added dynamically -->
+                </tbody>
+              </table>
+            </div>
+            <div class="total-amount">Total: ₹<span id="total-amount">0.00</span></div>
+          </div>
+
+          <div class="booking-form">
+            <h3 class="form-title">Book Now</h3>
+            <form id="booking-form">
+              <div class="form-group">
+                <label for="full-name">Full Name</label>
+                <input type="text" id="full-name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email ID</label>
+                <input type="email" id="email" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" required />
+              </div>
+              <button type="submit" class="btn">Book Now</button>
+              <div class="thank-you" id="thank-you" style="display:none;">Thank you For Booking the Service. We will get back to you soon!</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quality Section -->
+  <section class="quality" id="about">
+    <div class="container">
+      <h2 class="section-title">Why Choose Us</h2>
+      <div class="quality-container">
+        <div class="quality-item">
+          <div class="quality-icon"><i class="fas fa-star"></i></div>
+          <h3 class="quality-title">Premium Services</h3>
+          <p class="quality-description">We use only the highest quality cleaning products and techniques to ensure your clothes look their best.</p>
+        </div>
+        <div class="quality-item">
+          <div class="quality-icon"><i class="fas fa-headset"></i></div>
+          <h3 class="quality-title">Quick Support</h3>
+          <p class="quality-description">Our customer service team is available 24/7 to answer your questions and address any concerns.</p>
+        </div>
+        <div class="quality-item">
+          <div class="quality-icon"><i class="fas fa-clock"></i></div>
+          <h3 class="quality-title">Timely Delivery</h3>
+          <p class="quality-description">We guarantee on-time delivery of your cleaned clothes, every time.</p>
+        </div>
+        <div class="quality-item">
+          <div class="quality-icon"><i class="fas fa-tag"></i></div>
+          <h3 class="quality-title">Affordable Prices</h3>
+          <p class="quality-description">High-quality cleaning services at prices that won't break the bank.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter" id="contact">
+    <div class="container">
+      <h2 class="newsletter-title">Subscribe to our newsletter</h2>
+      <p class="newsletter-description">Stay updated with our latest offers, services, and laundry tips by subscribing to our newsletter.</p>
+      <form class="newsletter-form" id="newsletter-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <button type="submit" class="btn">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-links">
+          <a href="#" class="footer-logo">LaundryPro</a>
+          <p>Premium laundry services for your convenience and comfort.</p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h3>Important Links</h3>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h3>Contact Info</h3>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> 123 Laundry St, Clean City</li>
+            <li><i class="fas fa-phone"></i> +123 456 7890</li>
+            <li><i class="fas fa-envelope"></i> info@laundrypro.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 LaundryPro. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Load EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
+
+  <!-- Custom JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
