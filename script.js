@@ -1,4 +1,7 @@
-emailjs.init('YOUR_EMAILJS_USER_ID'); // Replace with actual EmailJS user ID
+// Initialize EmailJS with your public key
+(function() {
+  emailjs.init("NdUd-AR2RaZ_VbJ4R"); // Replace with your actual EmailJS public key
+})();
 
 let cart = [];
 let totalAmount = 0;
@@ -129,7 +132,7 @@ document.getElementById("booking-form").addEventListener("submit", function (e) 
   };
 
   emailjs
-    .send("YOUR_EMAILJS_SERVICE_ID", "YOUR_EMAILJS_TEMPLATE_ID", emailData)
+    .send("service_nnjezmh", "template_eca8d6s", emailData)
     .then(
       function (response) {
         document.getElementById("thank-you").style.display = "block";
